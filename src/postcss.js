@@ -1,17 +1,17 @@
-import "babel-polyfill";
-import postcss from 'postcss';
+import 'babel-polyfill'
+import postcss from 'postcss'
 
 export default async function(source, plugins) {
   if (!source || !source[0]) {
-    return '';
+    return ''
   }
 
-  const { content } = source[0];
+  const { content } = source[0]
 
   if (!plugins) {
-    return content;
+    return content
   } else {
-    const result = await postcss(plugins).process(content);
-    return result.css;
+    const result = await postcss(plugins).process(content)
+    return result.css
   }
 }
