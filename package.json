@@ -1,16 +1,15 @@
 {
   "name": "vue-sfc-compiler",
-  "version": "0.0.7",
+  "version": "1.0.0",
   "description": "compile vue single file component to js file.",
   "main": "lib/index.js",
   "scripts": {
-    "test": "npm test",
-    "build": "babel src --out-dir lib",
+    "build": "babel src -d lib",
     "release": "npm run build && npm publish"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chenjiahan/vue-sfc-compiler.git"
+    "url": "git+https://github.com/vhtml/vue-sfc-compiler.git"
   },
   "keywords": [
     "sfc",
@@ -18,21 +17,28 @@
     "vue",
     "component"
   ],
-  "author": "neverland",
+  "author": "vhtml",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/chenjiahan/vue-sfc-compiler/issues"
+    "url": "https://github.com/vhtml/vue-sfc-compiler/issues"
   },
-  "homepage": "https://github.com/chenjiahan/vue-sfc-compiler#readme",
+  "homepage": "https://github.com/vhtml/vue-sfc-compiler#readme",
   "peerDependencies": {
     "vue-template-compiler": ">=2.5.0",
     "vue-template-es2015-compiler": ">=1.6.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "vue-template-compiler": "^2.5.8",
+    "eslint": "^4.15.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "vue-template-compiler": "^2.5.13",
     "vue-template-es2015-compiler": "^1.6.0"
   },
   "dependencies": {
