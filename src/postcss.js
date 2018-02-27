@@ -1,7 +1,7 @@
 import 'babel-polyfill'
 import postcss from 'postcss'
 
-export default async function(source, plugins) {
+export default async function(source, resourcePath, plugins) {
   if (!source || !source[0]) {
     return ''
   }
@@ -11,7 +11,11 @@ export default async function(source, plugins) {
   if (!plugins) {
     return content
   } else {
-    const result = await postcss(plugins).process(content)
+    const result = await postcss(plugins).process(content, {
+      from: resourcePath,
+      to: resourcePath,
+      map: false
+    })
     return result.css
   }
 }
